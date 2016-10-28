@@ -19,7 +19,7 @@ module.exports = {
 				loader: "url-loader"
 			},
 			{
-				test: /\.(jpg)$/,
+				test: /\.(jpg|png)$/,
 				loader: "file-loader"
 			}
 		]
@@ -27,8 +27,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(["public"]),
 		new HtmlWebpackPlugin({
-			title: "Hello World",
-			template: "html-loader!./src/index.ejs"
+			template: "html-loader!./src/index.html"
 		}),
 		new ExtractTextPlugin("styles-[hash].css")		
 	]
