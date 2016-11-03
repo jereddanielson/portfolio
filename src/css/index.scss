@@ -2,9 +2,9 @@ $dark-gray: 		#20282f;
 $light-blue: 		#83AADB;
 $react-bg: 			#222;
 $react-color:		#32BBF0;
-// $react-color:		#61dafb;
+/* $react-color:		#61dafb;*/
 $firebase-bg: 		#32BBF0;
-// $firebase-bg: 		#039be5;
+/* $firebase-bg: 		#039be5;*/
 $firebase-front: 	#ffcb2c;
 $firebase-mid:		#f5820c;
 $firebase-back:		#ffa50d;
@@ -36,6 +36,9 @@ $three-bg:			#FFB81D;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-thin-down:before {
+  content: "\e900";
+}
 .icon-new-tab:before {
   content: "\ea7e";
 }
@@ -78,6 +81,7 @@ a {
 
 section {
 	padding: 50px 0;
+	margin-top: 100px;
 }
 
 footer {
@@ -87,6 +91,8 @@ footer {
 #main {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
+	position: relative;
 }
 
 #nav {
@@ -120,19 +126,43 @@ footer {
 #hero {
 	width: 100vw;
 	height: 100vh;
-	background: salmon;
+	background: $dark-gray;
+	color: white;
 	position: relative;
 
 	#hero-floater {
 		position: absolute;
 		left: 50%;
-		top: 50%;
+		top: 45%;
 		color: white;
 		transform: translate(-50%, -50%);
 		font-size: 50px;
 		display: inline-block;
 		white-space: nowrap;
 		text-align: center;
+	}
+
+	@keyframes arrow {
+		0% {
+			transform: translate(-50%, -25%);
+		}
+		100% {
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.icon-chevron-thin-down {
+		position: absolute;
+		left: 50%;
+		bottom: 25px;
+		transform: translate(-50%, -50%);
+		color: white;
+		font-size: 40px;
+		animation-name: arrow;
+		animation-duration: 1.5s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
 	}
 }
 
@@ -178,6 +208,7 @@ footer {
 	font-size: 18px;
 	h3 {
 		font-size: 32px;
+		margin-top: 0;
 	}
 	ul, li {
 		margin: 0;
@@ -187,18 +218,31 @@ footer {
 	ul {
 		margin-bottom: 50px;
 	}
+
+	@media screen and (min-width: 992px){
+		.col-md-4 {
+			position: relative;
+		}
+
+		.skills-block {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			display: inline-block;
+		}
+	}
 }
 
 #obsessions {
-	padding-bottom: 0;
 	#gadget-wrapper {
+		display: -ms-flexbox;
 		display: flex;
-		height: calc(100vw / 3);
 		.gadget-box {
-			flex-grow: 1;
-			height: 100%;
+			-ms-flex-positive: 1;
+			    flex-grow: 1;
 			position: relative;
-			&:hover {
+
+			&:hover, html.touchevents & {
 				.gadget-name, .gadget-description {
 					opacity: 1;
 					transform: translate(-50%, -50%);
@@ -211,11 +255,10 @@ footer {
 
 		@media screen and (max-width: 767px){
 			& {
-				height: 300vw;
-				flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				    flex-wrap: wrap;
 				.gadget-box {
-					height: 100vw;
-					width: 100vw;
+					width: 100%;
 				}
 			}
 		}
@@ -237,7 +280,7 @@ footer {
 		}
 
 		.gadget-name {
-			top: 18%;
+			top: 15%;
 			font-size: 4vw;
 			@media screen and (max-width: 767px){
 				font-size: 12vw;
@@ -245,7 +288,7 @@ footer {
 		}
 
 		.gadget-description {
-			top: 82%;
+			top: 85%;
 			font-size: 1.2vw;
 			@media screen and (max-width: 767px){
 				font-size: 3.6vw;
@@ -258,7 +301,7 @@ footer {
 	background: $react-bg;
 	position: relative;
 	width: 100%;
-	height: 100%;
+	padding-bottom: 100%;
 
 	#dot, #c1, #c2, #c3 {
 		position: absolute;
@@ -299,7 +342,7 @@ footer {
 		transform: translate(-50%, -50%) rotate(-60deg);
 	}
 
-	&:hover {
+	&:hover, html.touchevents & {
 		#c1, #c2, #c3 {
 			width: 12vw;
 			height: 5vw;
@@ -325,7 +368,7 @@ footer {
 	background: $firebase-bg;
 	position: relative;
 	width: 100%;
-	height: 100%;
+	padding-bottom: 100%;
 
 	#c {
 	  position: absolute;
@@ -358,7 +401,7 @@ footer {
 		}
 	}
 
-	&:hover #tri1 {
+	&:hover #tri1, html.touchevents & #tri1 {
 	  width: 0;
 	  height: 0;
 	  border-bottom: 8vw solid $firebase-front;
@@ -385,7 +428,7 @@ footer {
 		}
 	}
 
-	&:hover #tri5 {
+	&:hover #tri5, html.touchevents & #tri5 {
 	  transform: translate(-50%, 99%);
 	  width: 0;
 	  height: 0;
@@ -412,7 +455,7 @@ footer {
 		}
 	}
 
-	&:hover #tri2 {
+	&:hover #tri2, html.touchevents & #tri2 {
 	  width: 0;
 	  height: 0;
 	  border-bottom: 9vw solid $firebase-back;
@@ -438,7 +481,7 @@ footer {
 		}
 	}
 
-	&:hover #tri3 {
+	&:hover #tri3, html.touchevents & #tri3 {
 	  border-bottom: 11vw solid $firebase-back;
 	  border-left: 1.5vw solid transparent;
 	  border-right: 8.5vw solid transparent;
@@ -462,7 +505,7 @@ footer {
 		}
 	}
 
-	&:hover #tri4 {
+	&:hover #tri4, html.touchevents & #tri4 {
 	  border-bottom: 7.5vw solid $firebase-mid;
 	  border-left: 4.15vw solid transparent;
 	  border-right: 5.85vw solid transparent;
@@ -478,7 +521,7 @@ footer {
 	background: $three-bg;
 	position: relative;
 	width: 100%;
-	height: 100%;
+	padding-bottom: 100%;
 
 	#cx {
 	  position: absolute;
@@ -543,7 +586,7 @@ footer {
 		}
 	}
 
-	&:hover #cube {
+	&:hover #cube, html.touchevents & #cube {
 	  transform: translateZ(-4.5vw) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg);
 		@media screen and (max-width: 767px){
 		  transform: translateZ(-13.5vw) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg);
@@ -569,6 +612,8 @@ footer {
 	}
 
 	img {
+		-webkit-filter: grayscale(100%);
+		        filter: grayscale(100%);
 		margin-bottom: 50px;
 	}
 
@@ -583,6 +628,7 @@ footer {
 	}
 
 	#link-icons {
+		white-space: nowrap;
 		font-size: 40px;
 		a {
 			margin: 0 25px;

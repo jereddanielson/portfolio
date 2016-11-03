@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-	entry: ["./src/js/index.js", "webpack-dev-server/client?http://localhost:8080/"],
+	entry: ["./src/js/index.js"],
 	output: {
 		path: "./public",
 		filename: "bundle-[hash].js"
@@ -19,7 +19,7 @@ module.exports = {
 				loader: "url-loader"
 			},
 			{
-				test: /\.(jpg|png)$/,
+				test: /\.(jpg)$/,
 				loader: "file-loader"
 			}
 		]

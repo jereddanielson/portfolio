@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="partyparrot.png" type="image/png" >
+    <link rel="icon" href="partyparrot.gif" type="image/gif" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:300,400|Roboto+Slab" rel="stylesheet">    
-	<title>Jered Danielson</title>
+	<title>Jered Danielson Portfolio</title>
   </head>
   <body>
   	<div id="main">
@@ -14,29 +16,32 @@
 	  				<div class="col-xs-12">
 			  			<a data-scroll href="#main" id="to-home" class="nav-button" >jered.io</a>
 			  			<div id="right-group">
+			  				<span class="hidden-xs" >
 				  			<a data-scroll class="nav-button" href="#projects">work</a>
 				  			<span class="nav-button">&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
 				  			<a data-scroll class="nav-button" href="#skills">skills</a>
 				  			<span class="nav-button">&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
 				  			<a data-scroll class="nav-button" href="#obsessions">currently</a>
 				  			<span class="nav-button">&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
-				  			<a data-scroll class="nav-button" href="#about">about</a>
+				  			</span>
+				  			<a data-scroll class="nav-button" href="#about">contact</a>
 			  			</div>
 		  			</div>
 	  			</div>
   			</div>
   		</nav>
   		<main>
-	  		<section id="hero" >
-	  			<div id="hero-floater">UX Design&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Prototyping&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Development</div>
-	  		</section>
+	  		<div id="hero" >
+	  			<div id="hero-floater">UX Design<br/>+<br/>Prototyping<br/>+<br/>Development</div>
+	  			<a data-scroll href="#projects"><span class="icon-chevron-thin-down"></span></a>
+	  		</div>
 	  		<section id="projects" class="container" >
 	  			<div class="divider-header" >
 		  			<h1>Selected Work</h1>
 	  			</div>
 		  		<div class="row">
 		  			<div class="col-md-8">
-		  				<img class="thumbnail" src="img/space01.jpg" />
+		  				<a href="https://apod.jered.io" class="header-link" target="_blank"><img class="thumbnail" src="img/apod.jpg" alt="APOD 2.0 Thumbnail" /></a>
 		  			</div>
 		  			<div class="col-md-4">
 		  				<h3><a href="https://apod.jered.io" class="header-link" target="_blank">APOD 2.0 <span style="font-size: 16px;" class="icon-new-tab"></span></a></h3>
@@ -45,14 +50,14 @@
 		  					<li>Firebase</li>
 		  					<li>REST API</li>
 		  				</ul>
-		  				<p>APOD 2.0 is a project designed to update NASA's Astronomy Picture of the Day website for the modern web.</p>
-		  				<p>Launched in 1995, the NASA'S APOD serves a new beautiful astronomy picture every single day. Unfortunately the interface has not been updated for the last 21 years.</p>
-		  				<p>Using NASA's public API I have modernized APOD with a filmstrip scroll, keyboard navigation, asynchronous image preloading, and more. The result is an improved, smooth, and enjoyable APOD picture viewing experience.</p>
+		  				<p>APOD 2.0 is a personal project designed to update NASA's Astronomy Picture of the Day website for the modern web.</p>
+		  				<p>Launched in 1995, apod.nasa.gov serves a new beautiful astronomy picture every day. Unfortunately the interface has not been updated for the last 21 years.</p>
+		  				<p>Using NASA's public API I have modernized APOD with a scrolling filmstrip, keyboard navigation, asynchronous image preloading, and more. This project is ongoing, open source, and available on github.</p>
 		  			</div>
 		  		</div>
 		  		<div class="row">
 		  			<div class="col-md-8">
-		  				<img class="thumbnail" src="img/uwdesign.png" />
+		  				<a href="http://uwdesign2015.com" class="header-link" target="_blank"><img class="thumbnail" src="img/uwdesign.jpg" alt="UW Design 2015 Thumbnail" /></a>
 		  			</div>
 		  			<div class="col-md-4">
 		  				<h3><a href="http://uwdesign2015.com" class="header-link" target="_blank">UW Design 2015 <span style="font-size: 16px;" class="icon-new-tab"></span></a></h3>
@@ -61,25 +66,25 @@
 		  					<li>Isotope Masonry</li>
 		  					<li>REST API</li>
 		  				</ul>
-		  				<p>The University of Washington Department of Design's graduating class of 2015 website was designed and built by a team of students lead by myself.</p>
-		  				<p>The site was built on the tumblr microblogging platform to ease student submission of work and organization of content.</p>
+		  				<p>This website showcases the student profiles and work of the University of Washington Department of Design's 2015 graduating class.</p>
+		  				<p>Of the eight students assigned to the project, I was the primary person responsible for coding the site from scratch. I used the tumblr microblogging platform to make it easier for participating students to submit their work.</p>
 		  			</div>
 		  		</div>
 		  		<div class="row">
 		  			<div class="col-md-8">
-		  				<img class="thumbnail" src="img/news.png" />
+		  				<a href="http://us13.campaign-archive1.com/home/?u=8bf20cdb921c3b326bb771cb9&id=f39bfa5866" class="header-link" target="_blank"><img style="border: 5vw solid #f3f3f3 !important;" class="thumbnail" src="img/news.jpg" alt="Tectonic Newsletter Thumbnail" /></a>
 		  			</div>
 		  			<div class="col-md-4">
-		  				<h3><a href="https://jered.io/newsletter-demo" class="header-link" target="_blank">Tectonic Newsletter <span style="font-size: 16px;" class="icon-new-tab"></span></a></h3>
+		  				<h3><a href="http://us13.campaign-archive1.com/home/?u=8bf20cdb921c3b326bb771cb9&id=f39bfa5866" class="header-link" target="_blank">Tectonic Newsletter <span style="font-size: 16px;" class="icon-new-tab"></span></a></h3>
 		  				<ul>
 		  					<li>React.js</li>
 		  					<li>Firebase</li>
 		  					<li>Bootstrap</li>
 		  					<li>Zurb Foundation</li>
 		  				</ul>
-		  				<p>I helped to roll out Tectonic's brand new weekly design newsletter.</p>
-		  				<p>This project had many constraints to work around, chiefly the limitations of HTML email design and the need to automate newsletter formatting and image processing.</p>
-		  				<p>Using Zurb Foundation to create a responsive HTML template, I created a tool that can easily be used by anyone to fill in and process newsletter content.</p>
+		  				<p>While at Tectonic I helped to roll out a brand new weekly newsletter.</p>
+		  				<p>The first part of the project involved designing the newsletter and accounting for modern HTML email constraints. A template was built using Zurb Foundation to maximize responsiveness and consistency.</p>
+		  				<p>I also built an interactive form that enables users to fill in the template with arbitrary content and export the result. This greatly streamlined the weekly production of newsletter campaigns.</p>
 		  			</div>
 		  		</div>
 	  		</section>
@@ -89,41 +94,49 @@
 	  			</div>
 	  			<div class="container">
 		  			<div class="row">
-		  				<div class="col-md-8 col-md-offset-2">
+		  				<div class="col-md-10 col-md-offset-1">
 		  					<div class="row">
-				  				<div class="col-md-4">
-					  				<h3>UX</h3>
-					  				<ul>
-					  				 <li>Research</li>
-					  				 <li>Concepting</li>
-					  				 <li>Wireframing</li>
-					  				 <li>Storyboarding</li>
-					  				 <li>Prototyping</li>
-					  				 <li>Motion Design</li>
-					  				</ul>
+				  				<div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+					  				<div class="skills-block">
+						  				<h3>UX</h3>
+						  				<ul>
+						  				 <li>Research</li>
+						  				 <li>Concepting</li>
+						  				 <li>Wireframing</li>
+						  				 <li>Storyboarding</li>
+						  				 <li>Prototyping</li>
+						  				 <li>Motion Design</li>
+						  				</ul>
+					  				</div>
 				  				</div>
-				  				<div class="col-md-4">
-					  				<h3>Development</h3>
-					  				<ul>
-					  				 <li>JavaScript/jQuery</li>
-					  				 <li>HTML5</li>
-					  				 <li>CSS3/Sass</li>
-					  				 <li>React.js</li>
-					  				 <li>Node.js</li>
-					  				 <li>Java</li>
-					  				 <li>Python</li>
-					  				</ul>
+				  				<div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+					  				<div class="skills-block">
+						  				<h3>Development</h3>
+						  				<ul>
+						  				 <li>JavaScript/jQuery</li>
+						  				 <li>HTML5</li>
+						  				 <li>CSS3/Sass</li>
+						  				 <li>React.js</li>
+						  				 <li>Node.js</li>
+						  				 <li>Processing</li>
+						  				 <li>Java</li>
+						  				 <li>Python</li>
+						  				</ul>
+					  				</div>
 				  				</div>
-				  				<div class="col-md-4">
-					  				<h3>Software</h3>
-					  				<ul>
-					  				 <li>Adobe Illustrator</li>
-					  				 <li>Adobe After Effects</li>
-					  				 <li>Sketch</li>
-					  				 <li>Unity</li>
-					  				 <li>Webpack</li>
-					  				 <li>NPM</li>
-					  				</ul>
+				  				<div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+					  				<div class="skills-block">
+						  				<h3>Software</h3>
+						  				<ul>
+						  				 <li>Adobe Illustrator</li>
+						  				 <li>Adobe After Effects</li>
+						  				 <li>Sketch</li>
+						  				 <li>Unity</li>
+						  				 <li>Webpack</li>
+						  				 <li>NPM</li>
+						  				 <li>Git</li>
+						  				</ul>
+					  				</div>
 				  				</div>
 			  				</div>
 		  				</div>
@@ -132,7 +145,7 @@
   			</section>
 	  		<section id="obsessions">
 	  			<div class="divider-header" >
-		  			<h1>Currently Digging</h1>
+		  			<h1>Currently Loving</h1>
 	  			</div>
 	  			<div class="container">
 	  			<div class="row">
@@ -159,7 +172,7 @@
 										<div id="tri5"></div>
 									</div>
 				  				</div>
-				  				<div class="gadget-description">I don't want to worry about the backend - put it in the cloud!</div>
+				  				<div class="gadget-description">Don't worry about the backend - put it in the cloud!</div>
 				  			</div>
 				  			<div class="gadget-box">
 				  				<div class="gadget-name">Three.js</div>
@@ -181,15 +194,15 @@
   			</section>
 	  		<section id="about">
 	  			<div class="divider-header" >
-		  			<h1>About</h1>
+		  			<h1>Contact</h1>
 	  			</div>
 	  			<div class="container">
 	  				<div class="row">
-	  					<div class="col-md-4 col-md-offset-4">
+	  					<div class="col-sm-6 col-sm-offset-3">
 	  						<img id="portrait" src="img/portrait.jpg" />
 	  					</div>
-	  					<div class="col-md-6 col-md-offset-3">
-	  						<p id="about-me">Jered Danielson is a user experience designer, prototyper, maker, frontend developer, and University of Washington graduate currently residing in Seattle, WA.</p>
+	  					<div class="col-sm-6 col-sm-offset-3">
+	  						<p id="about-me">Jered Danielson is a user experience designer, prototyper, maker, frontend developer, problem solver, and University of Washington graduate currently residing in Seattle, WA.</p>
 	  						<div id="link-contact" style="margin: 50px 0px;">
 		  						<div><a target="_blank" href="mailto:jered@uw.edu">jered@uw.edu</a></div>
 		  						<div><a target="_blank" href="tel:+16122201735">(612) 220-1735</a></div>
