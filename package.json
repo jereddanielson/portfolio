@@ -4,6 +4,7 @@
   "description": "A basic Webpack, EJS, and Bootstrap (CSS) boilerplate",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "https://github.com/jereddanielson/webby",

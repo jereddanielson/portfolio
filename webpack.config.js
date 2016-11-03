@@ -19,7 +19,7 @@ module.exports = {
 				loader: "url-loader"
 			},
 			{
-				test: /\.(jpg)$/,
+				test: /\.(jpg|png)$/,
 				loader: "file-loader"
 			}
 		]

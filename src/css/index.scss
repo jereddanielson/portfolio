@@ -208,6 +208,17 @@ footer {
 	}
 }
 
+#clients {
+	vertical-align: center;
+	.client-image {
+		display: inline-block !important;
+		width: 200px;
+	}
+	.col-xs-4 {
+		text-align: center;
+	}
+}
+
 #skills {
 	font-size: 18px;
 	h3 {
@@ -245,6 +256,7 @@ footer {
 			-ms-flex-positive: 1;
 			    flex-grow: 1;
 			position: relative;
+			overflow: hidden;
 
 			&:hover, html.touchevents & {
 				.gadget-name, .gadget-description {
