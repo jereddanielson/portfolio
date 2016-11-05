@@ -62,6 +62,8 @@ $three-bg:			#FFB81D;
 body {
 	font-family: "Open Sans", sans-serif;
 	color: $dark-gray;
+	&.overlay-active {
+	}
 }
 
 img {
@@ -171,16 +173,18 @@ footer {
 }
 
 #projects {
-	.row {
+	.project-summary {
 		margin-top: 100px;
 		margin-bottom: 100px;
 
-		h3, li, ul {
+	}
+
+		h3, li, ul, h5 {
 			margin: 0;
 			padding: 0;
 		}
 
-		h3, ul {
+		h3, ul, h5 {
 			margin-bottom: 20px;
 		}
 
@@ -203,8 +207,66 @@ footer {
 			text-decoration: none;
 			list-style: none;
 			font-family: "Inconsolata", monospace;
-			opacity: 0.75;
+			opacity: 0.8;
 		}
+
+	.activate-overlay {
+		cursor: pointer;
+	}
+
+	h5.activate-overlay:hover {
+		text-decoration: underline;
+	}
+
+	.project-overlay {
+		padding: 50px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		height: calc(100vh - 100px);
+		background: white;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		z-index: 10;
+		margin: 0 auto;
+		transform: translate(-50%, calc(-50% + 40px));
+		opacity: 0;
+		pointer-events: none;
+		transition: .6s all cubic-bezier(.25, 0, .1, 1);
+
+		&.active {
+			transform: translate(-50%, calc(-50% + 20px));
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		h1 {
+			margin: 20px 0;
+		}
+
+		h5 {
+			margin: 5px 0;
+		}
+	}
+}
+
+#overlay-slip {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, .75);
+	z-index: 9;
+	opacity: 0;
+	pointer-events: none;
+	transition: .6s opacity cubic-bezier(.25, 0, .1, 1);
+	transition-delay: .15s;
+
+	.overlay-active & {
+		transition-delay: 0s;
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
 
@@ -214,7 +276,7 @@ footer {
 		display: inline-block !important;
 		width: 200px;
 	}
-	.col-xs-4 {
+	.col-md-4 {
 		text-align: center;
 	}
 }
