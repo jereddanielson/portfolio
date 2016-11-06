@@ -9,6 +9,7 @@ $firebase-front: 	#ffcb2c;
 $firebase-mid:		#f5820c;
 $firebase-back:		#ffa50d;
 $three-bg:			#FFB81D;
+$smooth-transition: cubic-bezier(0.25, 0, .1, 1);
 
 @font-face {
   font-family: 'icomoon';
@@ -74,14 +75,12 @@ img {
 }
 
 a {
-	color: inherit;
+	transition: .15s all cubic-bezier(0.25, 0, .1, 1);
+	color: $dark-gray;
+	text-decoration: underline;
 	&:hover {
-		color: inherit;
-		text-decoration: underline;
-	}
-	&:visited {
-		color: inherit;
-		text-decoration: none;
+		color: white;
+		background: $dark-gray;
 	}
 }
 
@@ -169,14 +168,38 @@ footer {
 		animation-timing-function: ease-in-out;
 		animation-iteration-count: infinite;
 		animation-direction: alternate;
+		text-decoration: none;
 	}
 }
 
 #projects {
+	.project-thumb-outline {
+		cursor: pointer;
+		background: $dark-gray;
+
+		img {
+			transition: .15s transform $smooth-transition;
+		}
+
+		&:hover img {
+			transform: scale(.9);
+		}
+	}
+
 	.project-summary {
 		margin-top: 100px;
 		margin-bottom: 100px;
 
+	}
+
+	.h5-link {
+		display: inline-block;
+		text-decoration: underline;
+		transition: .15s all $smooth-transition;
+		&:hover {
+			color: white;
+			background: $dark-gray;
+		}
 	}
 
 		h3, li, ul, h5 {
@@ -189,8 +212,10 @@ footer {
 		}
 
 		h3 {
+			transition: .15s all cubic-bezier(0.25, 0, .1, 1);
 			display: inline-block;
 			font-size: 32px;
+			text-decoration: none;
 			a {
 				&:hover {
 					text-decoration: none;
@@ -199,7 +224,9 @@ footer {
 
 			border-bottom: 2px solid transparent;
 			&:hover {
-				border-bottom: 2px solid black;
+				text-decoration: none;
+				background: $dark-gray;
+				color: white;
 			}
 		}
 
@@ -207,7 +234,7 @@ footer {
 			text-decoration: none;
 			list-style: none;
 			font-family: "Inconsolata", monospace;
-			opacity: 0.8;
+			opacity: 0.9;
 		}
 
 	.activate-overlay {
@@ -234,6 +261,22 @@ footer {
 		pointer-events: none;
 		transition: .6s all cubic-bezier(.25, 0, .1, 1);
 
+		.img-box {
+			margin: 75px 0;
+			text-align: center;
+
+			img {
+				border: 1px solid #ccc !important;
+			}
+
+			.caption {
+				font-size: 12px;
+				opacity: .75;
+				color: $dark-gray;
+				font: "Inconsolata", monospace;
+			}
+		}
+
 		&.active {
 			transform: translate(-50%, calc(-50% + 20px));
 			opacity: 1;
@@ -246,6 +289,34 @@ footer {
 
 		h5 {
 			margin: 5px 0;
+		}
+
+		p {
+			font-size: 18px;
+			margin: 25px 0;
+		}
+
+		h1, h4 {
+			text-align: center;
+		}
+
+		ul.apod-improvements, .apod-improvements li {
+			font-size: 16px;
+			opacity: .9;
+			list-style-type: square;
+		}
+
+		@media screen and (min-width: 992px){
+			.col-md-4 {
+				position: relative;
+			}
+
+			.skills-block {
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+				display: inline-block;
+			}
 		}
 	}
 }
@@ -677,8 +748,14 @@ footer {
 	color: white;
 	text-align: center;
 
+	a {
+		color: white;
+		text-decoration: underline;
+	}
+
 	a:hover {
-		color: $light-blue;
+		color: $dark-gray;
+		background: white;
 	}
 
 	p {
@@ -709,6 +786,8 @@ footer {
 		white-space: nowrap;
 		font-size: 40px;
 		a {
+			padding: 0 5px;
+			text-decoration: none;
 			margin: 0 25px;
 		}
 		a:hover {

@@ -2,41 +2,41 @@ require("../../node_modules/bootstrap/dist/css/bootstrap.css");
 require("../css/index.scss");
 require("file?name=./JeredDanielsonResume2016.pdf!../JeredDanielsonResume2016.pdf");
 require("file?name=./partyparrot.png!../img/partyparrot.png");
-require("file?name=./partyparrot.gif!../img/partyparrot.gif");
 var smoothScroll = require("smooth-scroll");
 smoothScroll.init({easing: "easeOutQuint"});
 
+var jQuery = require("jquery");
+var $ = jQuery;
+
 // add event listeners for project overlays
-var apodLinks = document.getElementsByClassName("activate-apod");
-apodLinks[0].addEventListener("click", activateApod);
-apodLinks[1].addEventListener("click", activateApod);
+$(".activate-apod").on("click", activateApod);
+$(".activate-uw").on("click", activateUW);
+$(".activate-newsletter").on("click", activateNewsletter);
+
+// event listeners for closing overlay when nav link clicked
+$("nav a").on("click", dismissOverlay);
 
 // add overlay background exit click listener
-document.getElementById("overlay-slip").addEventListener("click", dismissOverlay);
+$("#overlay-slip").on("click", dismissOverlay);
 
-var savedY = 0;
+var savedY = 0; // scroll position at time overlay is opened
 
 // set up scroll disable by recording current scroll position and adding event listener
 function disableScroll(){
-	savedY = document.body.scrollTop;
-	window.addEventListener("scroll", cancelScroll);
-	window.addEventListener("wheel", checkScroll);
+	savedY = $("body").scrollTop();
+	$(window).on("scroll", cancelScroll);
+	$(window).on("wheel", checkScroll);
 }
 
 // fired on scroll attempt to reset it back to saved location
 function cancelScroll(){
-	if(window.scrollTo){
-		window.scrollTo(0, savedY);
-	} else {
-		document.body.scrollTop = savedY;
-	}
+	$(window).scrollTop(savedY);
 }
 
 // check to see if overflow is at min or max scroll and cancel mousewheel if so
 function checkScroll(e){
-	var activeOverlay = document.getElementsByClassName("active")[0];
+	var activeOverlay = $(".active")[0];
 	// check min or max scroll
-	console.log(e);
 	if((activeOverlay.scrollTop === 0 && e.deltaY < 0) || (activeOverlay.scrollHeight - activeOverlay.scrollTop === activeOverlay.clientHeight && e.deltaY > 0)){
 		e.preventDefault();
 		e.stopPropagation();
@@ -45,21 +45,30 @@ function checkScroll(e){
 
 // re-enable scroll by canceling scroll listener
 function enableScroll(){
-	window.removeEventListener("scroll", cancelScroll);
+	$(window).off("scroll", cancelScroll);
 }
 
 function activateApod(e){
-	document.body.classList += " overlay-active ";
-	var apod = document.getElementById("apod-overlay");
-	apod.classList += " active ";
-	apod.scrollTop = 0;
+	activateOverlay("#apod-overlay");
+}
+
+function activateUW(e){
+	activateOverlay("#uw-overlay");
+}
+
+function activateNewsletter(e){
+	activateOverlay("#newsletter-overlay");
+}
+
+function activateOverlay(overlayID){
+	$("body").addClass("overlay-active");
+	$(overlayID).addClass("active").scrollTop(0);
 	disableScroll();
 }
 
 function dismissOverlay(e){
-	document.body.classList = document.body.classList.toString().replace("overlay-active", "");
-	var activeOverlays = document.getElementsByClassName("active");
-	activeOverlays[0].classList = activeOverlays[0].classList.toString().replace("active", "");
+	$("body").removeClass("overlay-active");
+	$(".active").removeClass("active");
 	enableScroll();
 }
 
