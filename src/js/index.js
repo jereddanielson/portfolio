@@ -16,8 +16,33 @@ $(".activate-newsletter").on("click", activateNewsletter);
 // event listeners for closing overlay when nav link clicked
 $("nav a").on("click", dismissOverlay);
 
-// add overlay background exit click listener
-$("#overlay-slip").on("click", dismissOverlay);
+// overlay background exit click listener
+$("#overlay-slip").on("click", historyGoBack);
+
+// listen for window back button
+$(window).on("popstate", onPop);
+
+function historyGoBack(){
+	if($(".active").length > 0){
+		window.history.back();
+	}
+}
+
+window.foo = smoothScroll.animateScroll;
+
+function onPop(d){
+	if($(".active").length > 0){
+		dismissOverlay();
+	}
+
+	if(window.location.hash === "#uw-overlay"){
+		activateOverlay("#uw-overlay");
+	} else if(window.location.hash === "#apod-overlay"){
+		activateOverlay("#apod-overlay");
+	} else if(window.location.hash === "#newsletter-overlay"){
+		activateOverlay("#newsletter-overlay");
+	}
+}
 
 var savedY = 0; // scroll position at time overlay is opened
 
@@ -46,6 +71,7 @@ function checkScroll(e){
 // re-enable scroll by canceling scroll listener
 function enableScroll(){
 	$(window).off("scroll", cancelScroll);
+	$(window).off("wheel", checkScroll);
 }
 
 function activateApod(e){
@@ -61,6 +87,7 @@ function activateNewsletter(e){
 }
 
 function activateOverlay(overlayID){
+	window.location.hash = overlayID;
 	$("body").addClass("overlay-active");
 	$(overlayID).addClass("active").scrollTop(0);
 	disableScroll();
