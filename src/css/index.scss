@@ -58,6 +58,7 @@ $smooth-transition: cubic-bezier(0.25, 0, .1, 1);
 
 * {
 	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -135,6 +136,7 @@ footer {
 #hero {
 	width: 100vw;
 	height: 100vh;
+	min-height: 560px;
 	background: $dark-gray;
 	color: white;
 	position: relative;
@@ -145,18 +147,44 @@ footer {
 		top: 45%;
 		color: white;
 		transform: translate(-50%, -50%);
-		font-size: 50px;
 		display: inline-block;
 		white-space: nowrap;
 		text-align: center;
+
+		@media screen and (max-width: 767px){
+			font-size: 40px;
+		}
+
+		.myname {
+			font-size: 60px;
+			font-family: "Inconsolata", monospace;
+			margin-bottom: 50px;
+
+			@media screen and (max-width: 991px){
+				font-size: 36px
+			}
+		}
+
+		.myskills {
+			font-size: 40px;
+			text-transform: uppercase;
+
+			@media screen and (max-width: 991px){
+				font-size: 24px;
+			}
+
+			@media screen and (max-width: 767px){
+				line-height: 2;
+			}
+		}
 	}
 
 	@keyframes arrow {
 		0% {
-			transform: translate(-50%, -25%);
+			bottom: 25px;
 		}
 		100% {
-			transform: translate(-50%, -50%);
+			bottom: 50px;
 		}
 	}
 

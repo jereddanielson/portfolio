@@ -20,7 +20,10 @@ module.exports = {
 			},
 			{
 				test: /\.(jpg|png)$/,
-				loader: "file-loader"
+				loaders: [
+					"file-loader",
+					'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "90", speed: 1}, mozjpeg: {quality: 90}}'
+				]
 			}
 		]
 	},
