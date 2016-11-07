@@ -425,6 +425,60 @@ footer {
 	}
 }
 
+$ratio-sm: 768 / 150;
+$ratio-md: 992 / 150;
+$ratio-lg: 1200 / 150;
+
+@mixin calc-ratio($prop, $num){
+	@media screen and (min-width: 768px){
+		#{$prop}: $num * $ratio-sm;
+	}
+	@media screen and (min-width: 992px){
+		#{$prop}: $num * $ratio-md;
+	}
+	@media screen and (min-width: 1200px){
+		#{$prop}: $num * $ratio-lg;
+	}
+}
+
+@mixin calc-ratio-transform-y($x, $y){
+	@media screen and (min-width: 768px){
+		transform: translate($x, $y * $ratio-sm);
+	}
+	@media screen and (min-width: 992px){
+		transform: translate($x, $y * $ratio-md);
+	}
+	@media screen and (min-width: 1200px){
+		transform: translate($x, $y * $ratio-lg);
+	}
+}
+
+@function calc-sm($a){
+	@return $a * $ratio-sm;
+}
+@function calc-md($a){
+	@return $a * $ratio-md;
+}
+@function calc-lg($a){
+	@return $a * $ratio-lg;
+}
+
+@mixin query-sm($prop, $op){
+	@media screen and (min-width: 768px){
+		#{$prop}: $op;
+	}
+}
+@mixin query-md($prop, $op){
+	@media screen and (min-width: 992px){
+		#{$prop}: $op;
+	}
+}
+@mixin query-lg($prop, $op){
+	@media screen and (min-width: 1200px){
+		#{$prop}: $op;
+	}
+}
+
 #obsessions {
 	#gadget-wrapper {
 		display: -ms-flexbox;
@@ -470,22 +524,25 @@ footer {
 			@media screen and (max-width: 767px){
 				width: 60vw;
 			}
+			@include calc-ratio(width, 40px);
 		}
 
 		.gadget-name {
-			top: 15%;
-			font-size: 4vw;
+			top: 13%;
+			font-size: 8px * $ratio-sm;
 			@media screen and (max-width: 767px){
 				font-size: 12vw;
 			}
+			@include calc-ratio(font-size, 8px);
 		}
 
 		.gadget-description {
-			top: 85%;
-			font-size: 1.2vw;
+			top: 87%;
+			font-size: 3px * $ratio-sm;
 			@media screen and (max-width: 767px){
 				font-size: 3.6vw;
 			}
+			@include calc-ratio(font-size, 2.4px);
 		}
 	}
 }
@@ -505,25 +562,47 @@ footer {
 
 	#dot {
 		background: $react-color;
-		width: 6.1vw;
-		height: 6.1vw;
 		border-radius: 50%;
 		@media screen and (max-width: 767px){
-			width: 18.1vw;
-			height: 18.1vw;
+			width: 18.3vw;
+			height: 18.3vw;
+		}
+		@media screen and (min-width: 768px){
+			width: 12.3px * $ratio-sm;
+			height: 12.3px * $ratio-sm;
+		}
+		@media screen and (min-width: 992px){
+			width: 12.3px * $ratio-md;
+			height: 12.3px * $ratio-md;
+		}
+		@media screen and (min-width: 1200px){
+			width: 12.3px * $ratio-lg;
+			height: 12.3px * $ratio-lg;
 		}
 	}
 
 	#c1, #c2, #c3 {
-		width: 6vw;
-		height: 6vw;
 		border-radius: 50%;
-		border: 1.5vw solid $react-color;
 		box-sizing: content-box;
 		@media screen and (max-width: 767px){
 			width: 18vw;
 			height: 18vw;
 			border: 4.5vw solid $react-color;
+		}
+		@media screen and (min-width: 768px){
+			width: 12px * $ratio-sm;
+			height: 12px * $ratio-sm;
+			border: (3px * $ratio-sm) solid $react-color;
+		}
+		@media screen and (min-width: 992px){
+			width: 12px * $ratio-md;
+			height: 12px * $ratio-md;
+			border: (3px * $ratio-md) solid $react-color;
+		}
+		@media screen and (min-width: 1200px){
+			width: 12px * $ratio-lg;
+			height: 12px * $ratio-lg;
+			border: (3px * $ratio-lg) solid $react-color;
 		}
 	}
 
@@ -537,21 +616,43 @@ footer {
 
 	&:hover, html.touchevents & {
 		#c1, #c2, #c3 {
-			width: 12vw;
-			height: 5vw;
-			border-width: .5vw;
 			@media screen and (max-width: 767px){
 				width: 36vw;
 				height: 15vw;
 				border-width: 1.5vw;
 			}
+			@media screen and (min-width: 768px){
+				width: 24px * $ratio-sm;
+				height: 10px * $ratio-sm;
+				border-width: 1px * $ratio-sm;
+			}
+			@media screen and (min-width: 992px){
+				width: 24px * $ratio-md;
+				height: 10px * $ratio-md;
+				border-width: 1px * $ratio-md;
+			}
+			@media screen and (min-width: 1200px){
+				width: 24px * $ratio-lg;
+				height: 10px * $ratio-lg;
+				border-width: 1px * $ratio-lg;
+			}
 		}
 		#dot {
-			width: 3vw;
-			height: 3vw;
 			@media screen and (max-width: 767px){
 				width: 9vw;
 				height: 9vw;
+			}
+			@media screen and (min-width: 768px){
+				width: 6px * $ratio-sm;
+				height: 6px * $ratio-sm;
+			}
+			@media screen and (min-width: 992px){
+				width: 6px * $ratio-md;
+				height: 6px * $ratio-md;
+			}
+			@media screen and (min-width: 1200px){
+				width: 6px * $ratio-lg;
+				height: 6px * $ratio-lg;
 			}
 		}
 	}
@@ -567,10 +668,11 @@ footer {
 	  position: absolute;
 	  left: 50%;
 	  top: 50%;
-	  transform: translate(-50%, 4.0vw);
+	  transform: translate(-50%, 8px * $ratio-sm);
 		@media screen and (max-width: 767px){
 			transform: translate(-50%, 13.5vw);
 		}
+		@include calc-ratio-transform-y(-50%, 13.5px * 2/3);
 	}
 
 	#tri1, #tri2, #tri3, #tri4, #tri5 {
@@ -584,129 +686,213 @@ footer {
 	#tri1 {
 	  width: 0;
 	  height: 0;
-	  border-bottom: 9vw solid $firebase-front;
-	  border-left: 5vw solid transparent;
-	  border-right: 5vw solid transparent;
+	  // border-bottom: (18px * $ratio-sm) solid $firebase-front;
+	  // border-left: (10px * $ratio-sm) solid transparent;
+	  // border-right: (10px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-bottom: 27vw solid $firebase-front;
 		  border-left: 15vw solid transparent;
 		  border-right: 15vw solid transparent;
 		}
+		@include query-sm(border-bottom, (calc-sm(27px * 2/3)) solid $firebase-front);
+		@include query-md(border-bottom, (calc-md(27px * 2/3)) solid $firebase-front);
+		@include query-lg(border-bottom, (calc-lg(27px * 2/3)) solid $firebase-front);
+		@include query-sm(border-left, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(15px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(15px * 2/3)) solid transparent);
 	}
 
 	&:hover #tri1, html.touchevents & #tri1 {
 	  width: 0;
 	  height: 0;
-	  border-bottom: 8vw solid $firebase-front;
-	  border-left: 8.5vw solid transparent;
-	  border-right: 1.5vw solid transparent;
+	  // border-bottom: (16px * $ratio-sm) solid $firebase-front;
+	  // border-left: (17px * $ratio-sm) solid transparent;
+	  // border-right: (3px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-bottom: 24vw solid $firebase-front;
 		  border-left: 25.5vw solid transparent;
 		  border-right: 4.5vw solid transparent;
 		}
+		@include query-sm(border-bottom, (calc-sm(24px * 2/3)) solid $firebase-front);
+		@include query-md(border-bottom, (calc-md(24px * 2/3)) solid $firebase-front);
+		@include query-lg(border-bottom, (calc-lg(24px * 2/3)) solid $firebase-front);
+		@include query-sm(border-left, (calc-sm(25.5px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(25.5px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(25.5px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(4.5px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(4.5px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(4.5px * 2/3)) solid transparent);
 	}
 
 	#tri5 {
 	  transform: translate(-50%, 99%);
 	  width: 0;
 	  height: 0;
-	  border-top: 0px solid $firebase-front;
-	  border-left: 5vw solid transparent;
-	  border-right: 5vw solid transparent;
+	  // border-top: 0px solid $firebase-front;
+	  // border-left: (10px * $ratio-sm) solid transparent;
+	  // border-right: (10px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-top: 0px solid $firebase-front;
 		  border-left: 15vw solid transparent;
 		  border-right: 15vw solid transparent;
 		}
+		@include query-sm(border-top, (calc-sm(0px * 2/3)) solid $firebase-front);
+		@include query-md(border-top, (calc-md(0px * 2/3)) solid $firebase-front);
+		@include query-lg(border-top, (calc-lg(0px * 2/3)) solid $firebase-front);
+		@include query-sm(border-left, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(15px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(15px * 2/3)) solid transparent);
 	}
 
 	&:hover #tri5, html.touchevents & #tri5 {
 	  transform: translate(-50%, 99%);
 	  width: 0;
 	  height: 0;
-	  border-top: 3vw solid $firebase-front;
-	  border-left: 5vw solid transparent;
-	  border-right: 5vw solid transparent;
+	  // border-top: (6px * $ratio-sm) solid $firebase-front;
+	  // border-left: (10px * $ratio-sm) solid transparent;
+	  // border-right: (10px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-top: 9vw solid $firebase-front;
 		  border-left: 15vw solid transparent;
 		  border-right: 15vw solid transparent;
 		}
+		@include query-sm(border-top, (calc-sm(9px * 2/3)) solid $firebase-front);
+		@include query-md(border-top, (calc-md(9px * 2/3)) solid $firebase-front);
+		@include query-lg(border-top, (calc-lg(9px * 2/3)) solid $firebase-front);
+		@include query-sm(border-left, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(15px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(15px * 2/3)) solid transparent);
 	}
 
 	#tri2 {
 	  width: 0;
 	  height: 0;
-	  border-bottom: 9vw solid $firebase-back;
-	  border-left: 5vw solid transparent;
-	  border-right: 5vw solid transparent;
+	  // border-bottom: (18px * $ratio-sm) solid $firebase-back;
+	  // border-left: (10px * $ratio-sm) solid transparent;
+	  // border-right: (10px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-bottom: 27vw solid $firebase-back;
 		  border-left: 15vw solid transparent;
 		  border-right: 15vw solid transparent;
 		}
+		@include query-sm(border-bottom, (calc-sm(27px * 2/3)) solid $firebase-back);
+		@include query-md(border-bottom, (calc-md(27px * 2/3)) solid $firebase-back);
+		@include query-lg(border-bottom, (calc-lg(27px * 2/3)) solid $firebase-back);
+		@include query-sm(border-left, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(15px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(15px * 2/3)) solid transparent);
 	}
 
-	&:hover #tri2, html.touchevents & #tri2 {
-	  width: 0;
-	  height: 0;
-	  border-bottom: 9vw solid $firebase-back;
-	  border-left: 5vw solid transparent;
-	  border-right: 5vw solid transparent;
-		@media screen and (max-width: 767px){
-		  border-bottom: 27vw solid $firebase-back;
-		  border-left: 15vw solid transparent;
-		  border-right: 15vw solid transparent;
-		}
-	}
+	// &:hover #tri2, html.touchevents & #tri2 {
+	//   width: 0;
+	//   height: 0;
+	//   // border-bottom: (18px * $ratio-sm) solid $firebase-back;
+	//   // border-left: (10px * $ratio-sm) solid transparent;
+	//   // border-right: (10px * $ratio-sm) solid transparent;
+	// 	@media screen and (max-width: 767px){
+	// 	  border-bottom: 27vw solid $firebase-back;
+	// 	  border-left: 15vw solid transparent;
+	// 	  border-right: 15vw solid transparent;
+	// 	}
+	// 	@include query-sm(border-bottom, (calc-sm(27px * 2/3)) solid $firebase-back);
+	// 	@include query-md(border-left, (calc-md(15px * 2/3)) solid transparent);
+	// 	@include query-lg(border-right, (calc-lg(15px * 2/3)) solid transparent);
+	// }
 
 	#tri3 {
 	  width: 0;
 	  height: 0;
-	  border-bottom: 9vw solid $firebase-back;
-	  border-left: 5vw solid transparent;
-	  border-right: 5vw solid transparent;
+	  // border-bottom: (18px * $ratio-sm) solid $firebase-back;
+	  // border-left: (10px * $ratio-sm) solid transparent;
+	  // border-right: (10px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-bottom: 27vw solid $firebase-back;
 		  border-left: 15vw solid transparent;
 		  border-right: 15vw solid transparent;
 		}
+		@include query-sm(border-bottom, (calc-sm(27px * 2/3)) solid $firebase-back);
+		@include query-md(border-bottom, (calc-md(27px * 2/3)) solid $firebase-back);
+		@include query-lg(border-bottom, (calc-lg(27px * 2/3)) solid $firebase-back);
+		@include query-sm(border-left, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(15px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(15px * 2/3)) solid transparent);
 	}
 
 	&:hover #tri3, html.touchevents & #tri3 {
-	  border-bottom: 11vw solid $firebase-back;
-	  border-left: 1.5vw solid transparent;
-	  border-right: 8.5vw solid transparent;
+	  // border-bottom: (22px * $ratio-sm) solid $firebase-back;
+	  // border-left: (3px * $ratio-sm) solid transparent;
+	  // border-right: (17px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-bottom: 33vw solid $firebase-back;
 		  border-left: 4.5vw solid transparent;
 		  border-right: 25.5vw solid transparent;
 		}
+		@include query-sm(border-bottom, (calc-sm(33px * 2/3)) solid $firebase-back);
+		@include query-md(border-bottom, (calc-md(33px * 2/3)) solid $firebase-back);
+		@include query-lg(border-bottom, (calc-lg(33px * 2/3)) solid $firebase-back);
+		@include query-sm(border-left, (calc-sm(4.5px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(4.5px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(4.5px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(25.5px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(25.5px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(25.5px * 2/3)) solid transparent);
 	}
 
 	#tri4 {
 	  width: 0;
 	  height: 0;
-	  border-bottom: 9vw solid $firebase-mid;
-	  border-left: 5vw solid transparent;
-	  border-right: 5vw solid transparent;
+	  // border-bottom: (18px * $ratio-sm) solid $firebase-mid;
+	  // border-left: (10px * $ratio-sm) solid transparent;
+	  // border-right: (10px * $ratio-sm) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-bottom: 27vw solid $firebase-mid;
 		  border-left: 15vw solid transparent;
 		  border-right: 15vw solid transparent;
 		}
+		@include query-sm(border-bottom, (calc-sm(27px * 2/3)) solid $firebase-mid);
+		@include query-md(border-bottom, (calc-md(27px * 2/3)) solid $firebase-mid);
+		@include query-lg(border-bottom, (calc-lg(27px * 2/3)) solid $firebase-mid);
+		@include query-sm(border-left, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(15px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(15px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(15px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(15px * 2/3)) solid transparent);
 	}
 
 	&:hover #tri4, html.touchevents & #tri4 {
-	  border-bottom: 7.5vw solid $firebase-mid;
-	  border-left: 4.15vw solid transparent;
-	  border-right: 5.85vw solid transparent;
+	  // border-bottom: (15px * $ratio-sm) solid $firebase-mid;
+	  // border-left: (8.3px * $ratio-sm) solid transparent;
+	  // border-right: (5.85px * $ratio-sm * 2) solid transparent;
 		@media screen and (max-width: 767px){
 		  border-bottom: 22.5vw solid $firebase-mid;
 		  border-left: 12.45vw solid transparent;
 		  border-right: 15.55vw solid transparent;
 		}
+		@include query-sm(border-bottom, (calc-sm(22.5px * 2/3)) solid $firebase-mid);
+		@include query-md(border-bottom, (calc-md(22.5px * 2/3)) solid $firebase-mid);
+		@include query-lg(border-bottom, (calc-lg(22.5px * 2/3)) solid $firebase-mid);
+		@include query-sm(border-left, (calc-sm(12.45px * 2/3)) solid transparent);
+		@include query-md(border-left, (calc-md(12.45px * 2/3)) solid transparent);
+		@include query-lg(border-left, (calc-lg(12.45px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(15.55px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(15.55px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(15.55px * 2/3)) solid transparent);
 	}
 }
 
@@ -721,14 +907,17 @@ footer {
 	  left: 50%;
 	  top: 50%;
 	  transform: translate(-50%, -50%);
-	  width: 9vw;
-	  height: 9vw;
-	  perspective: 100vw;
+	  // width: 18px * $ratio-sm;
+	  // height: 18px * $ratio-sm;
+	  // perspective: 100vw;
 		@media screen and (max-width: 767px){
 			width: 27vw;
 			height: 27vw;
 		    perspective: 300vw;
 		}
+		@include calc-ratio(width, 27px * 2/3);
+		@include calc-ratio(height, 27px * 2/3);
+		@include calc-ratio(perspective, 300px * 2/3);
 	}
 
 	#cube {
@@ -736,54 +925,71 @@ footer {
 	  height: 100%;
 	  position: relative;
 	  transform-style: preserve-3d;
-	  transform: translateZ(-4.5vw) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+	  // transform: translateZ(-9px * $ratio-sm) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
 	  transition: all .15s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 		@media screen and (max-width: 767px){
 		  transform: translateZ(-13.5vw) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
 		}
+		@include query-sm(transform, translateZ(-13.5px * 2/3 * $ratio-sm) rotateX(0deg) rotateY(0deg) rotateZ(90deg));
+		@include query-md(transform, translateZ(-13.5px * 2/3 * $ratio-md) rotateX(0deg) rotateY(0deg) rotateZ(90deg));
+		@include query-lg(transform, translateZ(-13.5px * 2/3 * $ratio-lg) rotateX(0deg) rotateY(0deg) rotateZ(90deg));
 	}
 
 	#cube .face {
 	  margin: 0;
-	  width: 9vw;
-	  height: 9vw;
+	  // width: 18px * $ratio-sm;
+	  // height: 18px * $ratio-sm;
 	  display: block;
 	  position: absolute;
 		@media screen and (max-width: 767px){
 			width: 27vw;
 			height: 27vw;
 		}
+		@include calc-ratio(width, 27px * 2/3);
+		@include calc-ratio(height, 27px * 2/3);
 	}
 
 	#one {
 	  background: #666;
-	  transform: rotateX(90deg) translateZ(4.49vw);
+	  // transform: rotateX(90deg) translateZ(9px * $ratio-sm);
 		@media screen and (max-width: 767px){
 		  transform: rotateX(90deg) translateZ(13.45vw);
 		}
+		@include query-sm(transform, rotateX(90deg) translateZ(13.45px * 2/3 * $ratio-sm));
+		@include query-md(transform, rotateX(90deg) translateZ(13.45px * 2/3 * $ratio-md));
+		@include query-lg(transform, rotateX(90deg) translateZ(13.45px * 2/3 * $ratio-lg));
 	}
 
 	#two {
 	  background: #999;
-	  transform: rotateY(90deg) translateZ(4.49vw);
+	  // transform: rotateY(90deg) translateZ(9px * $ratio-sm);
 		@media screen and (max-width: 767px){
 		  transform: rotateY(90deg) translateZ(13.45vw);
 		}
+		@include query-sm(transform, rotateY(90deg) translateZ(13.45px * 2/3 * $ratio-sm));
+		@include query-md(transform, rotateY(90deg) translateZ(13.45px * 2/3 * $ratio-md));
+		@include query-lg(transform, rotateY(90deg) translateZ(13.45px * 2/3 * $ratio-lg));
 	}
 
 	#three {
 	  background: #ddd;
-	  transform: rotateY(0deg) translateZ(4.49vw);
+	  // transform: rotateY(0deg) translateZ(9px * $ratio-sm);
 		@media screen and (max-width: 767px){
 		  transform: rotateY(0deg) translateZ(13.45vw);
 		}
+		@include query-sm(transform, rotateY(0deg) translateZ(13.45px * 2/3 * $ratio-sm));
+		@include query-md(transform, rotateY(0deg) translateZ(13.45px * 2/3 * $ratio-md));
+		@include query-lg(transform, rotateY(0deg) translateZ(13.45px * 2/3 * $ratio-lg));
 	}
 
 	&:hover #cube, html.touchevents & #cube {
-	  transform: translateZ(-4.5vw) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg);
+	  // transform: translateZ(-9px * $ratio-sm) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg);
 		@media screen and (max-width: 767px){
 		  transform: translateZ(-13.5vw) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg);
 		}
+		@include query-sm(transform, translateZ(-13.5px * 2/3 * $ratio-sm) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg));
+		@include query-md(transform, translateZ(-13.5px * 2/3 * $ratio-md) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg));
+		@include query-lg(transform, translateZ(-13.5px * 2/3 * $ratio-lg) rotateX(67.5deg) rotateY(0deg) rotateZ(135deg));
 	}
 }
 
