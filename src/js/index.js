@@ -1,7 +1,9 @@
 require("../../node_modules/bootstrap/dist/css/bootstrap.css");
 require("../css/index.scss");
+require("../css/deleteme.scss");
 require("file?name=./JeredDanielsonResume2016.pdf!../JeredDanielsonResume2016.pdf");
 require("file?name=./partyparrot.png!../img/partyparrot.png");
+require("file?name=./thumb.jpg!../img/thumb.jpg");
 var smoothScroll = require("smooth-scroll");
 smoothScroll.init({easing: "easeOutQuint"});
 
@@ -17,7 +19,7 @@ $(".activate-newsletter").on("click", activateNewsletter);
 $("nav a").on("click", dismissOverlay);
 
 // overlay background exit click listener
-$("#overlay-slip").on("click", historyGoBack);
+$("#overlay-slip, .close-overlay").on("click", historyGoBack);
 
 // listen for window back button
 $(window).on("popstate", onPop);

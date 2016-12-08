@@ -40,6 +40,9 @@ $smooth-transition: cubic-bezier(0.25, 0, .1, 1);
 .icon-chevron-thin-down:before {
   content: "\e900";
 }
+.icon-cross:before {
+  content: "\ea0f";
+}
 .icon-new-tab:before {
   content: "\ea7e";
 }
@@ -91,7 +94,7 @@ p {
 
 section {
 	padding: 50px 0;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 footer {
@@ -210,18 +213,20 @@ footer {
 		background: $dark-gray;
 
 		img {
-			transition: .15s transform $smooth-transition;
+			transition: .3s transform $smooth-transition;
 		}
 
 		&:hover img {
-			transform: scale(.9);
+			transform: scale(.95);
 		}
 	}
 
 	.project-summary {
 		margin-top: 100px;
 		margin-bottom: 100px;
-
+		&:last-child {
+			margin-bottom: 0px;
+		}
 	}
 
 	.h5-link {
@@ -278,7 +283,7 @@ footer {
 	}
 
 	.project-overlay {
-		padding: 50px;
+		padding: 50px 0;
 		position: fixed;
 		top: 50%;
 		left: 50%;
@@ -362,6 +367,36 @@ footer {
 				transform: translateY(0px);
 			}
 		}
+	}
+}
+
+.close-overlay {
+	width: 40px;
+	height: 40px;
+	background: white;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	border: 1px solid rgba(0, 0, 0, .75);
+	transition: .6s all $smooth-transition;
+	opacity: 0;
+	pointer-events: none;
+	cursor: pointer;
+	span {
+		position: absolute;
+		display: block;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: rgba(0, 0, 0, .75);
+	}
+
+	.overlay-active & {
+		top: 50px;
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
 
@@ -497,7 +532,7 @@ $ratio-lg: 1200 / 150;
 			}
 		}
 		* {
-			transition: all .15s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			transition: all .3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 		}
 
 		@media screen and (max-width: 767px){
@@ -680,7 +715,7 @@ $ratio-lg: 1200 / 150;
 	  bottom: 0;
 	  left: 50%;
 	  transform: translateX(-50%);
-	  transition: all .15s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	  //transition: all .15s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	#tri1 {
@@ -890,9 +925,9 @@ $ratio-lg: 1200 / 150;
 		@include query-sm(border-left, (calc-sm(12.45px * 2/3)) solid transparent);
 		@include query-md(border-left, (calc-md(12.45px * 2/3)) solid transparent);
 		@include query-lg(border-left, (calc-lg(12.45px * 2/3)) solid transparent);
-		@include query-sm(border-right, (calc-sm(15.55px * 2/3)) solid transparent);
-		@include query-md(border-right, (calc-md(15.55px * 2/3)) solid transparent);
-		@include query-lg(border-right, (calc-lg(15.55px * 2/3)) solid transparent);
+		@include query-sm(border-right, (calc-sm(17.5px * 2/3)) solid transparent);
+		@include query-md(border-right, (calc-md(17.5px * 2/3)) solid transparent);
+		@include query-lg(border-right, (calc-lg(17.5px * 2/3)) solid transparent);
 	}
 }
 
@@ -926,7 +961,7 @@ $ratio-lg: 1200 / 150;
 	  position: relative;
 	  transform-style: preserve-3d;
 	  // transform: translateZ(-9px * $ratio-sm) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
-	  transition: all .15s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	  // transition: all .15s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 		@media screen and (max-width: 767px){
 		  transform: translateZ(-13.5vw) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
 		}
