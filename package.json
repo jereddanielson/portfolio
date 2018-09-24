@@ -1,7 +1,7 @@
 {
-  "name": "webby",
-  "version": "1.0.0",
-  "description": "A basic Webpack, EJS, and Bootstrap (CSS) boilerplate",
+  "name": "jered-portfolio",
+  "version": "1.0.1",
+  "description": "Jered Danielson portfolio website 2016",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --hot --inline",
