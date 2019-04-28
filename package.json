@@ -1,35 +1,21 @@
 {
   "name": "jered-portfolio",
-  "version": "1.0.1",
+  "version": "1.5.0",
   "description": "Jered Danielson portfolio website 2016",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html"
   },
   "repository": "https://github.com/jereddanielson/webby",
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "bootstrap": "^3.3.0",
-    "clean-webpack-plugin": "^0.1.13",
-    "css-loader": "^0.25.0",
-    "extract-loader": "0.0.2",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.9.0",
-    "html-loader": "^0.4.4",
-    "html-webpack-plugin": "^2.24.0",
-    "image-webpack-loader": "^3.0.0",
-    "jquery": "^3.1.1",
-    "modernizr": "^3.3.1",
-    "node-sass": "^3.10.1",
-    "sass-loader": "^4.0.2",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.19.0"
   },
   "dependencies": {
+    "jquery": "^3.4.0",
     "smooth-scroll": "^16.0.3"
   }
 }
