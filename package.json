@@ -24,10 +24,12 @@
     "modernizr": "^3.3.1",
     "node-sass": "^3.10.1",
     "sass-loader": "^4.0.2",
-    "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "smooth-scroll": "^16.0.3"
   }
 }

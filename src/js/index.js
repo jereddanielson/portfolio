@@ -3,8 +3,12 @@ require("../css/index.scss");
 require("file?name=./JeredDanielsonResume2016.pdf!../JeredDanielsonResume2016.pdf");
 require("file?name=./partyparrot.png!../img/partyparrot.png");
 require("file?name=./thumb.jpg!../img/thumb.jpg");
-var smoothScroll = require("smooth-scroll");
-smoothScroll.init({ easing: "easeOutQuint" });
+var ss = require("smooth-scroll");
+var smoothScroll = ss("a.nav-button", {
+  easing: "easeOutQuint",
+  speed: 400,
+  popstate: false
+});
 
 var jQuery = require("jquery");
 var $ = jQuery;
@@ -28,8 +32,6 @@ function historyGoBack() {
     window.history.back();
   }
 }
-
-window.foo = smoothScroll.animateScroll;
 
 function onPop(d) {
   if ($(".active").length > 0) {
