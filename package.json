@@ -4,7 +4,8 @@
   "description": "Jered Danielson portfolio website 2016",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "repository": "https://github.com/jereddanielson/webby",
   "author": "",
