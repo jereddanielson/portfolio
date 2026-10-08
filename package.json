@@ -2,7 +2,6 @@
   "name": "jered-portfolio",
   "version": "1.5.0",
   "description": "Jered Danielson portfolio website 2016",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
@@ -11,12 +10,13 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bootstrap": "^3.3.0",
-    "parcel-bundler": "^1.3.1",
-    "sass": "^1.19.0"
+    "@parcel/transformer-sass": "^2.16.4",
+    "bootstrap": "^3.4.1",
+    "parcel": "^2.16.4",
+    "sass": "^1.105.1"
   },
   "dependencies": {
-    "jquery": "^3.4.0",
-    "smooth-scroll": "^16.0.3"
+    "jquery": "^3.7.1",
+    "smooth-scroll": "^16.1.3"
   }
 }
