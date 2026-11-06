@@ -16,6 +16,7 @@ $smooth-transition: cubic-bezier(0.25, 0, 0.1, 1);
 html,
 body {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -204,7 +205,7 @@ footer {
     bottom: 25px;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 40px;
+    font-size: 4rem;
     animation-name: arrow;
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
