@@ -15,6 +15,7 @@ var $ = jQuery;
 
 // add event listeners for project overlays
 $(".activate-apod").on("click", activateApod);
+$(".activate-chaos").on("click", activateChaos);
 $(".activate-uw").on("click", activateUW);
 $(".activate-newsletter").on("click", activateNewsletter);
 
@@ -42,6 +43,8 @@ function onPop(d) {
     activateOverlay("#uw-overlay");
   } else if (window.location.hash === "#apod-overlay") {
     activateOverlay("#apod-overlay");
+  } else if (window.location.hash === "#chaos-overlay") {
+    activateOverlay("#chaos-overlay");
   } else if (window.location.hash === "#newsletter-overlay") {
     activateOverlay("#newsletter-overlay");
   }
@@ -51,14 +54,15 @@ var savedY = 0; // scroll position at time overlay is opened
 
 // set up scroll disable by recording current scroll position and adding event listener
 function disableScroll() {
-  savedY = $("body").scrollTop();
+  savedY = window.scrollY;
   $(window).on("scroll", cancelScroll);
   $(window).on("wheel", checkScroll);
 }
 
 // fired on scroll attempt to reset it back to saved location
 function cancelScroll() {
-  $(window).scrollTop(savedY);
+  // explicit "instant" because the page has scroll-behavior: smooth in CSS
+  window.scrollTo({ top: savedY, behavior: "instant" });
 }
 
 // check to see if overflow is at min or max scroll and cancel mousewheel if so
@@ -86,6 +90,10 @@ function activateApod(e) {
   activateOverlay("#apod-overlay");
 }
 
+function activateChaos(e) {
+  activateOverlay("#chaos-overlay");
+}
+
 function activateUW(e) {
   activateOverlay("#uw-overlay");
 }
@@ -95,12 +103,13 @@ function activateNewsletter(e) {
 }
 
 function activateOverlay(overlayID) {
+  // pin the page before changing the hash, which can itself trigger a scroll
+  disableScroll();
   window.location.hash = overlayID;
   $("body").addClass("overlay-active");
   $(overlayID)
     .addClass("active")
     .scrollTop(0);
-  disableScroll();
 }
 
 function dismissOverlay(e) {
