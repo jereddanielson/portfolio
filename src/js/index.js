@@ -3,13 +3,6 @@
 // require("file?name=./JeredDanielsonResume2016.pdf!../JeredDanielsonResume2016.pdf");
 // require("file?name=./partyparrot.png!../img/partyparrot.png");
 // require("file?name=./thumb.jpg!../img/thumb.jpg");
-var ss = require("smooth-scroll");
-var smoothScroll = ss("a.nav-button", {
-  easing: "easeOutQuint",
-  speed: 400,
-  popstate: false
-});
-
 var jQuery = require("jquery");
 var $ = jQuery;
 
