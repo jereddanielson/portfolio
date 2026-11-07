@@ -25,6 +25,7 @@
 @media screen and (min-width: 1200px) {
   :root {
     --ratio: calc(1200 / 150);
+    --overlay-width: min(1440px, calc(100vw - 30px));
   }
 }
 
@@ -107,6 +108,14 @@ a {
   &:hover {
     color: white;
     background: var(--dark-gray);
+  }
+}
+
+.header-link {
+  font-size: 1.5rem;
+
+  .icon-new-tab {
+    font-size: 0.85em;
   }
 }
 
@@ -326,6 +335,12 @@ footer {
     pointer-events: none;
     transition: 0.6s all cubic-bezier(0.25, 0, 0.1, 1);
 
+    @media screen and (min-width: 1200px) {
+      .container {
+        width: var(--overlay-width);
+      }
+    }
+
     .img-box {
       margin: 75px 0;
       text-align: center;
@@ -373,19 +388,6 @@ footer {
       list-style-type: square;
     }
 
-    @media screen and (min-width: 992px) {
-      .col-md-4 {
-        position: relative;
-      }
-
-      .skills-block {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        display: inline-block;
-      }
-    }
-
     @media screen and (max-width: 767px) {
       padding: 20px 0 0 0;
       top: 40px;
@@ -414,6 +416,12 @@ footer {
   opacity: 0;
   pointer-events: none;
   cursor: pointer;
+
+  /* keep the button on the overlay's left edge; 1170px is the nav container's width */
+  @media screen and (min-width: 1200px) {
+    left: calc((1170px - var(--overlay-width)) / 2);
+  }
+
   span {
     position: absolute;
     display: block;
