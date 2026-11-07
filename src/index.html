@@ -1,599 +1,476 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="img/favicon.png" type="image/png" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta
-      name="description"
-      content="Portfolio website of Seattle based UX designer, prototyper, and front end developer Jered Danielson"
-    />
-    <meta property="og:title" content="Jered Danielson Portfolio" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jered.io" />
-    <meta property="og:image" content="img/thumb.jpg" />
-    <meta
-      property="og:description"
-      content="Portfolio website of Seattle based UX designer, prototyper, and front end developer Jered Danielson"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:300,400|Roboto+Slab"
-      rel="stylesheet"
-    />
-    <title>Jered Danielson</title>
-    <link
-      href="../node_modules/bootstrap/dist/css/bootstrap.css"
-      rel="stylesheet"
-    />
-    <link href="css/index.scss" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="main">
-      <nav id="nav">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description"
+    content="Portfolio website of Seattle based UX designer, prototyper, and front end developer Jered Danielson" />
+  <meta property="og:title" content="Jered Danielson Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jered.io" />
+  <meta property="og:image" content="img/thumb.jpg" />
+  <meta property="og:description"
+    content="Portfolio website of Seattle based UX designer, prototyper, and front end developer Jered Danielson" />
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:300,400|Roboto+Slab" rel="stylesheet" />
+  <title>Jered Danielson</title>
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="css/index.scss" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="main">
+    <nav id="nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <a data-scroll href="#main" id="to-home" class="nav-button">jered.io</a>
+            <div id="right-group">
+              <span class="hidden-xs">
+                <a data-scroll class="nav-button" href="#projects">showcase</a>
+                <span class="nav-button">&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
+                <a data-scroll class="nav-button" href="#clients">partnerships</a>
+                <span class="nav-button">&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
+                <a data-scroll class="nav-button" href="#skills">skills</a>
+                <span class="nav-button">&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
+                <a data-scroll class="nav-button" href="#obsessions">tools</a>
+                <span class="nav-button">&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
+              </span>
+              <a data-scroll class="nav-button" href="#about">contact</a>
+            </div>
+            <div class="close-overlay">
+              <span class="icon-cross"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div id="hero">
+        <div id="hero-floater">
+          <div class="myname">Jered Danielson</div>
+          <div class="myskills">Lead UX Developer</div>
+        </div>
+        <a class="hero-arrow" data-scroll href="#projects"><span class="icon-chevron-thin-down"></span></a>
+      </div>
+      <div id="overlay-slip"></div>
+      <section id="projects" class="container">
+        <div class="divider-header">
+          <h1>Personal Showcase</h1>
+        </div>
+        <div id="project-apod" class="project-summary row">
+          <div class="col-md-8">
+            <div class="project-thumb-outline">
+              <img class="thumbnail activate-overlay activate-apod" src="img/apod.jpg" alt="APOD 2.0 Thumbnail" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h3 class="activate-overlay activate-apod">APOD 2.0</h3>
+            <h5>
+              <a href="https://apod.jered.io" class="header-link" target="_blank">View Live
+                <span style="font-size: 12px" class="icon-new-tab"></span></a>
+            </h5>
+            <p>
+              APOD 2.0 is a solo personal design project to update NASA's
+              Astronomy Picture of the Day website for the modern web.
+            </p>
+            <p>
+              Launched in 1995, apod.nasa.gov serves a new beautiful astronomy
+              picture every day, but the interface was not updated for over 30 years.
+            </p>
+            <p>
+              My goal was to enhance the user experience and image gallery
+              navigation of APOD. To that end I have modernized it with a
+              scrolling filmstrip, keyboard navigation, asynchronous image
+              preloading, and more.
+            </p>
+            <h5 class="activate-overlay activate-apod h5-link">Read More</h5>
+          </div>
+          <div id="apod-overlay" class="project-overlay">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                  <h1>APOD 2.0</h1>
+                  <h4>Updating NASA's website for the modern web.</h4>
+                  <h5 style="text-align: center">Released 2016, updated 2026</h5>
+                  <h5 style="text-align: center">
+                    <a href="https://apod.jered.io" class="header-link" target="_blank">View Live
+                      <span style="font-size: 12px" class="icon-new-tab"></span></a>
+                  </h5>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="img-box">
+                        <img class="thumbnail" src="img/apod/apod-hero.jpg" alt="APOD 2.0 Hero" />
+                      </div>
+                    </div>
+                    <div style="margin-top: 25px; margin-bottom: 25px"
+                      class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+                      <div class="row">
+                        <div class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-4">
+                          <div class="skills-block">
+                            <h5>Tech</h5>
+                            <ul>
+                              <li>React.js</li>
+                              <li>jQuery</li>
+                              <li>REST API</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-4">
+                          <div class="skills-block">
+                            <h5>Roles</h5>
+                            <ul>
+                              <li>Project Manager</li>
+                              <li>UX Designer</li>
+                              <li>Programmer</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-4">
+                          <div class="skills-block">
+                            <h5>Client</h5>
+                            <ul>
+                              <li>Personal Project</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+                      <p>
+                        Ask any space, science, or astronomy enthusiast about
+                        <a href="https://apod.nasa.gov" target="_blank">NASA's Asronomy Picture of the Day</a>
+                        and they will probably gush about it. Launched in
+                        1995, APOD has served the public with a new beautiful
+                        astronomy-related picture every day for the last 21
+                        years. APOD is one of the most popular government
+                        websites, drawing over 1.5 million visitors per month.
+                      </p>
+                      <p>
+                        For being such a beloved government service, the
+                        visual design and UI of Astronomy Picture of the Day
+                        is outdated to say the least. The interface has not
+                        been significantly updated in decades, and visiting
+                        the site is like going back to a time when dial-up
+                        modems ruled the land and Google hadn't been invented
+                        yet.
+                      </p>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="img-box">
+                        <img class="thumbnail" src="img/apod/apod-before.jpg"
+                          alt="The original Astornomy Picture of the Day on NASA's website." />
+                        <div class="caption">
+                          NASA's current Astronomy Picture of the Day
+                          interface
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+                      <p>
+                        I decided to apply my skills as a UX designer and
+                        frontend developer to update the APOD website for the
+                        modern web. My goal was to make browsing the image
+                        gallery more streamlined, intuitive, and accessible. I
+                        call my new and improved version "<a href="https://apod.jered.io" target="_blank">APOD 2.0</a>".
+                        Many improvements have been made, including:
+                      </p>
+                      <ul class="apod-improvements">
+                        <li>
+                          Dark color scheme better showcases space imagery
+                        </li>
+                        <li>
+                          Keyboard arrow key navigation enables rapid browsing
+                        </li>
+                        <li>
+                          Scrollable filmstrip gives a preview of dozens of
+                          images
+                        </li>
+                        <li>Intelligent image preloading increases speed</li>
+                        <li>
+                          Dropdown selection makes it easy to select a
+                          specific date
+                        </li>
+                        <li>
+                          Nonessential info is hidden in hover states to keep
+                          focus on the imagery
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="img-box">
+                        <img class="thumbnail" src="img/apod/apod-after.jpg" alt="My updated APOD 2.0 interface." />
+                        <div class="caption">
+                          My updated Astronomy Picture of the Day interface,
+                          "APOD 2.0"
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+                      <p>
+                        The heavy lifting in the project is done by
+                        <a href="https://facebook.github.io/react/" target="_blank">React.js</a>, Facebook's amazing UI
+                        library. I chose React.js
+                        because it let me easily encapsulate interactive
+                        components like the filmstrip, thumbnails, and date
+                        picker.
+                        <a href="https://jquery.com" target="_blank">jQuery</a>
+                        was also used for its convenient AJAX capabilities,
+                        and
+                        <a href="http://greensock.com/gsap" target="_blank">GreenSock Animation Platform (GSAP)</a>
+                        provides some animation muscle.
+                      </p>
+                      <p>
+                        Special thanks goes to NASA for
+                        <a href="https://api.nasa.gov/api.html#apod" target="_blank">making their APOD API public</a>,
+                        without which this project would not be possible.
+                      </p>
+                      <p>
+                        APOD 2.0 is open source under the GNU GPL 3.0 license,
+                        and is
+                        <a href="https://github.com/jereddanielson/apod2.0" target="_blank">available on github.com</a>.
+                        It is an ongoing project which I am constantly
+                        trying to improve upon. Future feature TODO list
+                        includes search, tagging, slideshow, and alternate
+                        navigation modes.
+                      </p>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="img-box">
+                        <img class="thumbnail" src="img/apod/apod-fullscreen.jpg" alt="APOD 2.0 Fullscreen Image"
+                          title="APOD 2.0 Fullscreen Image" />
+                        <div class="caption">
+                          Click an image to quickly view a high resolution
+                          full screen version
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="img-box">
+                        <img class="thumbnail" src="img/apod/apod-description.jpg" alt="APOD 2.0 Image Description Open"
+                          title="APOD 2.0 Image Description Open" />
+                        <div class="caption">
+                          Detailed image description is revealed by hovering
+                          the title
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="img-box">
+                        <img class="thumbnail" src="img/apod/apod-datebox.jpg" alt="APOD 2.0 Datebox Year Picker Open"
+                          title="APOD 2.0 Datebox Year Picker Open" />
+                        <div class="caption">
+                          Specific dates can be navigated to in seconds via
+                          dropdown
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+                      <h1>2026 Update</h4>
+                        <p>After 30 years of service, in September of 2026, NASA finally updated their <a
+                            href="https://science.nasa.gov/apod/archive/">APOD website</a> to a
+                          new, clean, more modern look. While this did not entirely render APOD 2.0 obsolete,
+                          unfortunately NASA also deprecated the old API I used for this project. In November 2026 I
+                          revisted this project to fix breaking issues and ensure it continues to serve as a (now rather
+                          historical) showcase of my work and to serve the public.</p>
+                        <ul class="apod-improvements">
+                          <li>
+                            Updated to the <a href="https://api.nasa.gov/">new NASA APOD API</a> for data fetching
+                          </li>
+                          <li>Updated NPM dependencies to modern versions</li>
+                          <li>Added automatic deployment to Firebase via GitHub Actions</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="clients">
+        <div class="divider-header">
+          <h1>Past Partnerships</h1>
+        </div>
+        <div class="container">
+          <div class="project-summary row">
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+              <div class="row">
+                <div class="col-md-4 col-xs-6">
+                  <img class="client-image" src="img/clientlogos-Indeed.png" alt="Indeed" title="Indeed" />
+                </div>
+                <div class="col-md-4 col-xs-6">
+                  <img class="client-image" src="img/clientlogos-hbo_c.png" alt="HBO" title="HBO" />
+                </div>
+                <div class="col-md-4 col-xs-6">
+                  <img class="client-image" src="img/clientlogos-aurora_c.png" alt="Aurora Innovation"
+                    title="Aurora Innovation" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills">
+        <div class="divider-header">
+          <h1>Skills</h1>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+                  <div class="skills-block">
+                    <ul>
+                      <li>JavaScript/TypeScript</li>
+                      <li>React</li>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>Node</li>
+                      <li>GraphQL & Apollo</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+                  <div class="skills-block">
+                    <ul>
+                      <li>Design Systems</li>
+                      <li>Accessibility & WCAG</li>
+                      <li>CI/CD</li>
+                      <li>Unit & E2E Testing</li>
+                      <li>Prototyping</li>
+                      <li>UX Design</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+                  <div class="skills-block">
+                    <ul>
+                      <li>Webpack</li>
+                      <li>NPM</li>
+                      <li>Git</li>
+                      <li>Storybook</li>
+                      <li>Figma</li>
+                      <li>A/B Testing</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="obsessions">
+        <div class="divider-header">
+          <h1>Favored Tools</h1>
+        </div>
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <a data-scroll href="#main" id="to-home" class="nav-button"
-                >jered.io</a
-              >
-              <div id="right-group">
-                <span class="hidden-xs">
-                  <a data-scroll class="nav-button" href="#projects">work</a>
-                  <span class="nav-button"
-                    >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span
-                  >
-                  <a data-scroll class="nav-button" href="#clients"
-                    >partnerships</a
-                  >
-                  <span class="nav-button"
-                    >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span
-                  >
-                  <a data-scroll class="nav-button" href="#skills">skills</a>
-                  <span class="nav-button"
-                    >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span
-                  >
-                  <a data-scroll class="nav-button" href="#obsessions"
-                    >currently</a
-                  >
-                  <span class="nav-button"
-                    >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span
-                  >
-                </span>
-                <a data-scroll class="nav-button" href="#about">contact</a>
-              </div>
-              <div class="close-overlay">
-                <span class="icon-cross"></span>
+              <div id="gadget-wrapper">
+                <div class="gadget-box">
+                  <div class="gadget-name">React</div>
+                  <div id="react-box">
+                    <div id="dot"></div>
+                    <div id="c1"></div>
+                    <div id="c2"></div>
+                    <div id="c3"></div>
+                  </div>
+                  <div class="gadget-description">
+                    The modern gold standard
+                  </div>
+                </div>
+                <div class="gadget-box">
+                  <div class="gadget-name">Firebase</div>
+                  <div id="firebase-box">
+                    <div id="c">
+                      <div id="tri3"></div>
+                      <div id="tri2"></div>
+                      <div id="tri4"></div>
+                      <div id="tri1"></div>
+                      <div id="tri5"></div>
+                    </div>
+                  </div>
+                  <div class="gadget-description">Elegant cloud toolkit</div>
+                </div>
+                <div class="gadget-box">
+                  <div class="gadget-name">Three.js</div>
+                  <div id="three-box">
+                    <div id="cx">
+                      <div id="cube">
+                        <div id="two" class="face"></div>
+                        <div id="three" class="face"></div>
+                        <div id="one" class="face"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="gadget-description">
+                    Powerful 3D in the browser
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </nav>
-      <main>
-        <div id="hero">
-          <div id="hero-floater">
-            <div class="myname">Jered Danielson</div>
-            <div class="myskills">Lead UX Developer</div>
-          </div>
-          <a class="hero-arrow" data-scroll href="#projects"
-            ><span class="icon-chevron-thin-down"></span
-          ></a>
+      </section>
+      <section id="about">
+        <div class="divider-header">
+          <h1>Contact</h1>
         </div>
-        <div id="overlay-slip"></div>
-        <section id="projects" class="container">
-          <div class="divider-header">
-            <h1>Selected Work</h1>
-          </div>
-          <div id="project-apod" class="project-summary row">
-            <div class="col-md-8">
-              <div class="project-thumb-outline">
-                <img
-                  class="thumbnail activate-overlay activate-apod"
-                  src="img/apod.jpg"
-                  alt="APOD 2.0 Thumbnail"
-                />
-              </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+              <img id="portrait" src="img/portrait.jpg" />
             </div>
-            <div class="col-md-4">
-              <h3 class="activate-overlay activate-apod">APOD 2.0</h3>
-              <h5>
-                <a
-                  href="https://apod.jered.io"
-                  class="header-link"
-                  target="_blank"
-                  >View Live
-                  <span style="font-size: 12px" class="icon-new-tab"></span
-                ></a>
-              </h5>
-              <p>
-                APOD 2.0 is a solo personal design project to update NASA's
-                Astronomy Picture of the Day website for the modern web.
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <p id="about-me">
+                Jered Danielson is a design engineer, leader,
+                prototyper, mentor, designer, maker, problem solver, and
+                University of Washington graduate currently residing in
+                Seattle, WA.
               </p>
-              <p>
-                Launched in 1995, apod.nasa.gov serves a new beautiful astronomy
-                picture every day, but the interface has not been updated for
-                the last 21 years.
-              </p>
-              <p>
-                My goal is to enhance the user experience and image gallery
-                navigation of APOD. To that end I have modernized it with a
-                scrolling filmstrip, keyboard navigation, asynchronous image
-                preloading, and more.
-              </p>
-              <h5 class="activate-overlay activate-apod h5-link">Read More</h5>
-            </div>
-            <div id="apod-overlay" class="project-overlay">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xs-10 col-xs-offset-1">
-                    <h1>APOD 2.0</h1>
-                    <h4>Updating NASA's website for the modern web.</h4>
-                    <h5 style="text-align: center">
-                      <a
-                        href="https://apod.jered.io"
-                        class="header-link"
-                        target="_blank"
-                        >View Live
-                        <span
-                          style="font-size: 12px"
-                          class="icon-new-tab"
-                        ></span
-                      ></a>
-                    </h5>
-                    <div class="row">
-                      <div class="col-xs-12">
-                        <div class="img-box">
-                          <img
-                            class="thumbnail"
-                            src="img/apod/apod-hero.jpg"
-                            alt="APOD 2.0 Hero"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        style="margin-top: 25px; margin-bottom: 25px"
-                        class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0"
-                      >
-                        <div class="row">
-                          <div
-                            class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-4"
-                          >
-                            <div class="skills-block">
-                              <h5>Tech</h5>
-                              <ul>
-                                <li>React.js</li>
-                                <li>jQuery</li>
-                                <li>REST API</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div
-                            class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-4"
-                          >
-                            <div class="skills-block">
-                              <h5>Roles</h5>
-                              <ul>
-                                <li>Project Manager</li>
-                                <li>UX Designer</li>
-                                <li>Programmer</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div
-                            class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-4"
-                          >
-                            <div class="skills-block">
-                              <h5>Client</h5>
-                              <ul>
-                                <li>Personal Project</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+              <div id="link-contact" style="margin: 50px 0px">
+                <div>
+                  <a target="_blank" href="mailto:jered@uw.edu">jered@uw.edu</a>
+                </div>
+                <div>
+                  <a target="_blank" href="tel:+16122201735">(612) 220-1735</a>
+                </div>
+                <div>
+                  <a target="_blank" href="Jered_Danielson_Resume_2026_V2.pdf">View Full Resume</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+                  <div id="link-icons" class="row">
+                    <div class="col-xs-4">
+                      <a target="_blank" class="link-linkedin" href="https://www.linkedin.com/in/jereddanielson"><span
+                          class="icon-linkedin"></span></a>
                     </div>
-                    <div class="row">
-                      <div
-                        class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0"
-                      >
-                        <p>
-                          Ask any space, science, or astronomy enthusiast about
-                          <a href="https://apod.nasa.gov" target="_blank"
-                            >NASA's Asronomy Picture of the Day</a
-                          >
-                          and they will probably gush about it. Launched in
-                          1995, APOD has served the public with a new beautiful
-                          astronomy-related picture every day for the last 21
-                          years. APOD is one of the most popular government
-                          websites, drawing over 1.5 million visitors per month.
-                        </p>
-                        <p>
-                          For being such a beloved government service, the
-                          visual design and UI of Astronomy Picture of the Day
-                          is outdated to say the least. The interface has not
-                          been significantly updated in decades, and visiting
-                          the site is like going back to a time when dial-up
-                          modems ruled the land and Google hadn't been invented
-                          yet.
-                        </p>
-                      </div>
-                      <div class="col-xs-12">
-                        <div class="img-box">
-                          <img
-                            class="thumbnail"
-                            src="img/apod/apod-before.jpg"
-                            alt="The original Astornomy Picture of the Day on NASA's website."
-                          />
-                          <div class="caption">
-                            NASA's current Astronomy Picture of the Day
-                            interface
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0"
-                      >
-                        <p>
-                          I decided to apply my skills as a UX designer and
-                          frontend developer to update the APOD website for the
-                          modern web. My goal was to make browsing the image
-                          gallery more streamlined, intuitive, and accessible. I
-                          call my new and improved version "<a
-                            href="https://apod.jered.io"
-                            target="_blank"
-                            >APOD 2.0</a
-                          >". Many improvements have been made, including:
-                        </p>
-                        <ul class="apod-improvements">
-                          <li>
-                            Dark color scheme better showcases space imagery
-                          </li>
-                          <li>
-                            Keyboard arrow key navigation enables rapid browsing
-                          </li>
-                          <li>
-                            Scrollable filmstrip gives a preview of dozens of
-                            images
-                          </li>
-                          <li>Intelligent image preloading increases speed</li>
-                          <li>
-                            Dropdown selection makes it easy to select a
-                            specific date
-                          </li>
-                          <li>
-                            Nonessential info is hidden in hover states to keep
-                            focus on the imagery
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-xs-12">
-                        <div class="img-box">
-                          <img
-                            class="thumbnail"
-                            src="img/apod/apod-after.jpg"
-                            alt="My updated APOD 2.0 interface."
-                          />
-                          <div class="caption">
-                            My updated Astronomy Picture of the Day interface,
-                            "APOD 2.0"
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0"
-                      >
-                        <p>
-                          The heavy lifting in the project is done by
-                          <a
-                            href="https://facebook.github.io/react/"
-                            target="_blank"
-                            >React.js</a
-                          >, Facebook's amazing UI library. I chose React.js
-                          because it let me easily encapsulate interactive
-                          components like the filmstrip, thumbnails, and date
-                          picker.
-                          <a href="https://jquery.com" target="_blank"
-                            >jQuery</a
-                          >
-                          was also used for its convenient AJAX capabilities,
-                          and
-                          <a href="http://greensock.com/gsap" target="_blank"
-                            >GreenSock Animation Platform (GSAP)</a
-                          >
-                          provides some animation muscle.
-                        </p>
-                        <p>
-                          Special thanks goes to NASA for
-                          <a
-                            href="https://api.nasa.gov/api.html#apod"
-                            target="_blank"
-                            >making their APOD API public</a
-                          >, without which this project would not be possible.
-                        </p>
-                        <p>
-                          APOD 2.0 is open source under the GNU GPL 3.0 license,
-                          and is
-                          <a
-                            href="https://github.com/jereddanielson/apod2.0"
-                            target="_blank"
-                            >available on github.com</a
-                          >. It is an ongoing project which I am constantly
-                          trying to improve upon. Future feature TODO list
-                          includes search, tagging, slideshow, and alternate
-                          navigation modes.
-                        </p>
-                      </div>
-                      <div class="col-xs-12">
-                        <div class="img-box">
-                          <img
-                            class="thumbnail"
-                            src="img/apod/apod-fullscreen.jpg"
-                            alt="APOD 2.0 Fullscreen Image"
-                            title="APOD 2.0 Fullscreen Image"
-                          />
-                          <div class="caption">
-                            Click an image to quickly view a high resolution
-                            full screen version
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xs-12">
-                        <div class="img-box">
-                          <img
-                            class="thumbnail"
-                            src="img/apod/apod-description.jpg"
-                            alt="APOD 2.0 Image Description Open"
-                            title="APOD 2.0 Image Description Open"
-                          />
-                          <div class="caption">
-                            Detailed image description is revealed by hovering
-                            the title
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xs-12">
-                        <div class="img-box">
-                          <img
-                            class="thumbnail"
-                            src="img/apod/apod-datebox.jpg"
-                            alt="APOD 2.0 Datebox Year Picker Open"
-                            title="APOD 2.0 Datebox Year Picker Open"
-                          />
-                          <div class="caption">
-                            Specific dates can be navigated to in seconds via
-                            dropdown
-                          </div>
-                        </div>
-                      </div>
+                    <div class="col-xs-4">
+                      <a target="_blank" class="link-github" href="https://github.com/jereddanielson"><span
+                          class="icon-github"></span></a>
+                    </div>
+                    <div class="col-xs-4">
+                      <a target="_blank" class="link-stackoverflow"
+                        href="https://stackoverflow.com/users/4897779/jered"><span
+                          class="icon-stackoverflow"></span></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section id="clients">
-          <div class="divider-header">
-            <h1>Past Partnerships</h1>
-          </div>
-          <div class="container">
-            <div class="project-summary row">
-              <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                <div class="row">
-                  <div class="col-md-4 col-xs-6">
-                    <img
-                      class="client-image"
-                      src="img/clientlogos-Indeed.png"
-                      alt="Indeed"
-                      title="Indeed"
-                    />
-                  </div>
-                  <div class="col-md-4 col-xs-6">
-                    <img
-                      class="client-image"
-                      src="img/clientlogos-hbo_c.png"
-                      alt="HBO"
-                      title="HBO"
-                    />
-                  </div>
-                  <div class="col-md-4 col-xs-6">
-                    <img
-                      class="client-image"
-                      src="img/clientlogos-aurora_c.png"
-                      alt="Aurora Innovation"
-                      title="Aurora Innovation"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="skills">
-          <div class="divider-header">
-            <h1>Skills</h1>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1">
-                <div class="row">
-                  <div
-                    class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2"
-                  >
-                    <div class="skills-block">
-                      <ul>
-                        <li>JavaScript/TypeScript</li>
-                        <li>React</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Node</li>
-                        <li>GraphQL & Apollo</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div
-                    class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2"
-                  >
-                    <div class="skills-block">
-                      <ul>
-                        <li>Design Systems</li>
-                        <li>Accessibility & WCAG</li>
-                        <li>CI/CD</li>
-                        <li>Unit & E2E Testing</li>
-                        <li>Prototyping</li>
-                        <li>UX Design</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div
-                    class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2"
-                  >
-                    <div class="skills-block">
-                      <ul>
-                        <li>Webpack</li>
-                        <li>NPM</li>
-                        <li>Git</li>
-                        <li>Storybook</li>
-                        <li>Figma</li>
-                        <li>A/B Testing</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="obsessions">
-          <div class="divider-header">
-            <h1>Currently Loving</h1>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
-                <div id="gadget-wrapper">
-                  <div class="gadget-box">
-                    <div class="gadget-name">React</div>
-                    <div id="react-box">
-                      <div id="dot"></div>
-                      <div id="c1"></div>
-                      <div id="c2"></div>
-                      <div id="c3"></div>
-                    </div>
-                    <div class="gadget-description">
-                      The modern gold standard
-                    </div>
-                  </div>
-                  <div class="gadget-box">
-                    <div class="gadget-name">Firebase</div>
-                    <div id="firebase-box">
-                      <div id="c">
-                        <div id="tri3"></div>
-                        <div id="tri2"></div>
-                        <div id="tri4"></div>
-                        <div id="tri1"></div>
-                        <div id="tri5"></div>
-                      </div>
-                    </div>
-                    <div class="gadget-description">Elegant cloud toolkit</div>
-                  </div>
-                  <div class="gadget-box">
-                    <div class="gadget-name">Three.js</div>
-                    <div id="three-box">
-                      <div id="cx">
-                        <div id="cube">
-                          <div id="two" class="face"></div>
-                          <div id="three" class="face"></div>
-                          <div id="one" class="face"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="gadget-description">
-                      3D on the web made accessible
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="about">
-          <div class="divider-header">
-            <h1>Contact</h1>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div
-                class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2"
-              >
-                <img id="portrait" src="img/portrait.jpg" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                <p id="about-me">
-                  Jered Danielson is a design engineer, leader,
-                  prototyper, mentor, designer, maker, problem solver, and
-                  University of Washington graduate currently residing in
-                  Seattle, WA.
-                </p>
-                <div id="link-contact" style="margin: 50px 0px">
-                  <div>
-                    <a target="_blank" href="mailto:jered@uw.edu"
-                      >jered@uw.edu</a
-                    >
-                  </div>
-                  <div>
-                    <a target="_blank" href="tel:+16122201735"
-                      >(612) 220-1735</a
-                    >
-                  </div>
-                  <div>
-                    <a target="_blank" href="Jered_Danielson_Resume_2026_V2.pdf"
-                      >View Full Resume</a
-                    >
-                  </div>
-                </div>
-                <div class="row">
-                  <div
-                    class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0"
-                  >
-                    <div id="link-icons" class="row">
-                      <div class="col-xs-4">
-                        <a
-                          target="_blank"
-                          class="link-linkedin"
-                          href="https://www.linkedin.com/in/jereddanielson"
-                          ><span class="icon-linkedin"></span
-                        ></a>
-                      </div>
-                      <div class="col-xs-4">
-                        <a
-                          target="_blank"
-                          class="link-github"
-                          href="https://github.com/jereddanielson"
-                          ><span class="icon-github"></span
-                        ></a>
-                      </div>
-                      <div class="col-xs-4">
-                        <a
-                          target="_blank"
-                          class="link-stackoverflow"
-                          href="https://stackoverflow.com/users/4897779/jered"
-                          ><span class="icon-stackoverflow"></span
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-    <script type="module" src="js/index.js"></script>
-  </body>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="js/index.js"></script>
+</body>
+
 </html>
