@@ -10,9 +10,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.16.4",
     "bootstrap": "^3.4.1",
-    "parcel": "^2.16.4",
-    "sass": "^1.105.1"
+    "parcel": "^2.16.4"
   }
 }

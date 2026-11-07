@@ -1,5 +1,4 @@
 // require("../../node_modules/bootstrap/dist/css/bootstrap.css");
-// require("../css/index.scss");
 // require("file?name=./JeredDanielsonResume2016.pdf!../JeredDanielsonResume2016.pdf");
 // require("file?name=./partyparrot.png!../img/partyparrot.png");
 // require("file?name=./thumb.jpg!../img/thumb.jpg");
