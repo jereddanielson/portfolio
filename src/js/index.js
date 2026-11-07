@@ -3,32 +3,35 @@
 // require("file?name=./JeredDanielsonResume2016.pdf!../JeredDanielsonResume2016.pdf");
 // require("file?name=./partyparrot.png!../img/partyparrot.png");
 // require("file?name=./thumb.jpg!../img/thumb.jpg");
-var jQuery = require("jquery");
-var $ = jQuery;
+function onClick(selector, handler) {
+  document.querySelectorAll(selector).forEach(function(el) {
+    el.addEventListener("click", handler);
+  });
+}
 
 // add event listeners for project overlays
-$(".activate-apod").on("click", activateApod);
-$(".activate-chaos").on("click", activateChaos);
-$(".activate-uw").on("click", activateUW);
-$(".activate-newsletter").on("click", activateNewsletter);
+onClick(".activate-apod", activateApod);
+onClick(".activate-chaos", activateChaos);
+onClick(".activate-uw", activateUW);
+onClick(".activate-newsletter", activateNewsletter);
 
 // event listeners for closing overlay when nav link clicked
-$("nav a").on("click", dismissOverlay);
+onClick("nav a", dismissOverlay);
 
 // overlay background exit click listener
-$("#overlay-slip, .close-overlay").on("click", historyGoBack);
+onClick("#overlay-slip, .close-overlay", historyGoBack);
 
 // listen for window back button
-$(window).on("popstate", onPop);
+window.addEventListener("popstate", onPop);
 
 function historyGoBack() {
-  if ($(".active").length > 0) {
+  if (document.querySelector(".active")) {
     window.history.back();
   }
 }
 
 function onPop(d) {
-  if ($(".active").length > 0) {
+  if (document.querySelector(".active")) {
     dismissOverlay();
   }
 
@@ -48,8 +51,9 @@ var savedY = 0; // scroll position at time overlay is opened
 // set up scroll disable by recording current scroll position and adding event listener
 function disableScroll() {
   savedY = window.scrollY;
-  $(window).on("scroll", cancelScroll);
-  $(window).on("wheel", checkScroll);
+  window.addEventListener("scroll", cancelScroll);
+  // non-passive so checkScroll can call preventDefault
+  window.addEventListener("wheel", checkScroll, { passive: false });
 }
 
 // fired on scroll attempt to reset it back to saved location
@@ -60,7 +64,7 @@ function cancelScroll() {
 
 // check to see if overflow is at min or max scroll and cancel mousewheel if so
 function checkScroll(e) {
-  var activeOverlay = $(".active")[0];
+  var activeOverlay = document.querySelector(".active");
   // check min or max scroll
   if (
     (activeOverlay.scrollTop === 0 && e.deltaY < 0) ||
@@ -75,8 +79,8 @@ function checkScroll(e) {
 
 // re-enable scroll by canceling scroll listener
 function enableScroll() {
-  $(window).off("scroll", cancelScroll);
-  $(window).off("wheel", checkScroll);
+  window.removeEventListener("scroll", cancelScroll);
+  window.removeEventListener("wheel", checkScroll);
 }
 
 function activateApod(e) {
@@ -99,15 +103,19 @@ function activateOverlay(overlayID) {
   // pin the page before changing the hash, which can itself trigger a scroll
   disableScroll();
   window.location.hash = overlayID;
-  $("body").addClass("overlay-active");
-  $(overlayID)
-    .addClass("active")
-    .scrollTop(0);
+  document.body.classList.add("overlay-active");
+  var overlay = document.querySelector(overlayID);
+  if (overlay) {
+    overlay.classList.add("active");
+    overlay.scrollTop = 0;
+  }
 }
 
 function dismissOverlay(e) {
-  $("body").removeClass("overlay-active");
-  $(".active").removeClass("active");
+  document.body.classList.remove("overlay-active");
+  document.querySelectorAll(".active").forEach(function(el) {
+    el.classList.remove("active");
+  });
   enableScroll();
 }
 
